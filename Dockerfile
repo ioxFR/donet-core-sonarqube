@@ -2,4 +2,4 @@
 FROM microsoft/dotnet:2.2-sdk
 # We do an update and we install java8 required for SQ Analysis
 RUN apt-get update \
-&& apt-get install default-jre
+&& apt-get -y install default-jre
