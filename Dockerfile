@@ -1,11 +1,11 @@
 # Base image used is Microsoft provided image, this will be changed by alpine to create image which contain multiple netcore sdk
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1
+FROM mcr.microsoft.com/dotnet/sdk:5.0
 MAINTAINER Valentin LECERF <valentin.lecerf@vlecerf.com>
 # We do an update and we install java8 required for SQ Analysis
 RUN apt-get update \
 && apt-get -y install default-jre
 #Install node
-ENV NODE_VERSION 10.15.3
+ENV NODE_VERSION 12.19.0
 ENV NODE_DOWNLOAD_SHA 6c35b85a7cd4188ab7578354277b2b2ca43eacc864a2a16b3669753ec2369d52
 
 RUN curl -SL "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}-linux-x64.tar.gz" --output nodejs.tar.gz \
